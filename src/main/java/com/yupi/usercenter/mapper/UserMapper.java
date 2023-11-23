@@ -1,16 +1,18 @@
 package com.yupi.usercenter.mapper;
 
+import com.yupi.usercenter.model.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.yupi.usercenter.model.User;
 
 /**
- * @Author：Victor_htq
- * @Package：com.yupi.usercenter.mapper
- * @Project：user-center
- * @name：UserMapper
- * @Date：2023/11/22 15:48
- * @Filename：UserMapper
- */
+* @author Victo
+* @description 针对表【user(用户)】的数据库操作Mapper
+* @createDate 2023-11-23 10:53:34
+* @Entity generator.domain.User
+*/
 public interface UserMapper extends BaseMapper<User> {
 
 }
+
+
+
+
