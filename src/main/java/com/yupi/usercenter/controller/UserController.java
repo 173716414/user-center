@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.yupi.usercenter.constant.UserConstant.ADMIN_ROLE;
+import static com.yupi.usercenter.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * @Author：Victor_htq
@@ -45,6 +49,12 @@ public class UserController {
         return userService.userRegister(userAccount, userPassword, checkPassword);
     }
 
+    /**
+     * 用户登录
+     * @param userLoginRequest
+     * @param request
+     * @return
+     */
     @PostMapping("/login")
     public User userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
         if (userLoginRequest == null) {
@@ -58,8 +68,40 @@ public class UserController {
         return userService.userLogin(userAccount, userPassword, request);
     }
 
+    /**
+     * 用户检索
+     * @param username
+     * @param request
+     * @return
+     */
     @GetMapping("/search")
-    public List<User> searchUsers(String username) {
-        return userService.searchUsers(username);
+    public List<User> searchUsers(String username, HttpServletRequest request) {
+        if (roleCheck(request)) return null;
+        return userService.searchUsers(username)
+                .stream().map(user -> userService.getSafetyUser(user))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * 用户删除
+     * @param id
+     * @param request
+     * @return
+     */
+    @GetMapping("/delete")
+    public boolean deleteUser(Long id, HttpServletRequest request) {
+        if (roleCheck(request)) return false;
+        if (id <= 0) {
+            return false;
+        }
+        return userService.removeById(id);
+    }
+    private static boolean roleCheck(HttpServletRequest request) {
+        Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
+        User user = (User) userObj;
+        if (user == null || user.getUserRole() != ADMIN_ROLE) {
+            return true;
+        }
+        return false;
     }
 }
