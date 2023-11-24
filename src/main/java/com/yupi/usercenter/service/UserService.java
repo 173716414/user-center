@@ -4,6 +4,7 @@ import com.yupi.usercenter.model.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
 * @author Victo
@@ -32,4 +33,6 @@ public interface UserService extends IService<User> {
      * @return 返回脱敏后用户信息
      */
     User userLogin(String userAccount, String userPassword, HttpServletRequest request);
+
+    List<User> searchUsers(String username);
 }
