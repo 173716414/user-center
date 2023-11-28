@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
-* Author Victo
+/*
+* Author Victor
 * Description 针对表【user(用户)】的数据库操作Service
 * @createDate 2023-11-23 10:53:34
 */
@@ -37,7 +37,7 @@ public interface UserService extends IService<User> {
     /**
      * 用户脱敏
      * Param originUser
-     * @return
+     * @return User
      */
     User getSafetyUser(User originUser);
 

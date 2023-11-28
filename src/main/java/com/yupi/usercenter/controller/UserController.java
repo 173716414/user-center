@@ -33,7 +33,7 @@ public class UserController {
     /**
      * 用户注册
      * Param userRegisterRequest
-     * @return
+     * @return Long id
      */
     @PostMapping("/register")
     public Long userRegister(@RequestBody UserRegisterRequest userRegisterRequest) {
@@ -53,7 +53,7 @@ public class UserController {
      * 用户登录
      * Param userLoginRequest
      * Param request
-     * @return
+     * @return User
      */
     @PostMapping("/login")
     public User userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
@@ -72,7 +72,7 @@ public class UserController {
      * 用户检索
      * Param username
      * Param request
-     * @return
+     * @return User
      */
     @GetMapping("/search")
     public List<User> searchUsers(String username, HttpServletRequest request) {
@@ -86,7 +86,7 @@ public class UserController {
      * 用户删除
      * Param id
      * Param request
-     * @return
+     * @return SuccessOrNot
      */
     @GetMapping("/delete")
     public boolean deleteUser(Long id, HttpServletRequest request) {
@@ -99,9 +99,6 @@ public class UserController {
     private static boolean roleCheck(HttpServletRequest request) {
         Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
         User user = (User) userObj;
-        if (user == null || user.getUserRole() != ADMIN_ROLE) {
-            return true;
-        }
-        return false;
+        return user == null || user.getUserRole() != ADMIN_ROLE;
     }
 }

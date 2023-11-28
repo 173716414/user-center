@@ -18,8 +18,8 @@ import java.util.regex.Pattern;
 
 import static com.yupi.usercenter.constant.UserConstant.USER_LOGIN_STATE;
 
-/**
-* Author Victo
+/*
+* Author Victor
 * Description 针对表【user(用户)】的数据库操作Service实现
 * @createDate 2023-11-23 10:53:34
 */
@@ -125,7 +125,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     /**
      * 用户脱敏
      * Param originUser
-     * @return
+     * @return User
      */
     @Override
     public User getSafetyUser(User originUser) {
