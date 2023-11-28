@@ -1,12 +1,12 @@
 package com.yupi.usercenter.model.domain.request;
 
-/**
- * @Author：Victor_htq
- * @Package：com.yupi.usercenter.model.domain.request
- * @Project：user-center
- * @name：UserRegisterRequest
- * @Date：2023/11/23 16:55
- * @Filename：UserRegisterRequest
+/*
+ * Author：Victor_htq
+ * Package：com.yupi.usercenter.model.domain.request
+ * Project：user-center
+ * Name：UserRegisterRequest
+ * Date：2023/11/23 16:55
+ * Filename：UserRegisterRequest
  */
 
 import lombok.Data;

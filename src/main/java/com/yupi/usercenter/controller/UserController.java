@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 import static com.yupi.usercenter.constant.UserConstant.ADMIN_ROLE;
 import static com.yupi.usercenter.constant.UserConstant.USER_LOGIN_STATE;
 
-/**
- * @Author：Victor_htq
- * @Package：com.yupi.usercenter.controller
- * @Project：user-center
- * @name：UserController
- * @Date：2023/11/23 16:47
- * @Filename：UserController
+/*
+ * Author：Victor_htq
+ * Package：com.yupi.usercenter.controller
+ * Project：user-center
+ * Name：UserController
+ * Date：2023/11/23 16:47
+ * Filename：UserController
  */
 @RestController
 @RequestMapping("/user")
@@ -32,7 +32,7 @@ public class UserController {
 
     /**
      * 用户注册
-     * @param userRegisterRequest
+     * Param userRegisterRequest
      * @return
      */
     @PostMapping("/register")
@@ -51,8 +51,8 @@ public class UserController {
 
     /**
      * 用户登录
-     * @param userLoginRequest
-     * @param request
+     * Param userLoginRequest
+     * Param request
      * @return
      */
     @PostMapping("/login")
@@ -70,8 +70,8 @@ public class UserController {
 
     /**
      * 用户检索
-     * @param username
-     * @param request
+     * Param username
+     * Param request
      * @return
      */
     @GetMapping("/search")
@@ -84,8 +84,8 @@ public class UserController {
 
     /**
      * 用户删除
-     * @param id
-     * @param request
+     * Param id
+     * Param request
      * @return
      */
     @GetMapping("/delete")

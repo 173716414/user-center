@@ -8,13 +8,13 @@ import javax.annotation.Resource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * @Author：Victor_htq
- * @Package：com.yupi.usercenter.service
- * @Project：user-center
- * @name：UserServiceTest
- * @Date：2023/11/23 10:59
- * @Filename：UserServiceTest
+/*
+ * Author：Victor_htq
+ * Package：com.yupi.usercenter.service
+ * Project：user-center
+ * Name：UserServiceTest
+ * Date：2023/11/23 10:59
+ * Filename：UserServiceTest
  */
 
 /**
